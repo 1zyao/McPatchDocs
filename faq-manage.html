@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>管理端 - mcpatch docs</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/highlight.css">
+        <link rel="stylesheet" href="theme/line-height.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">项目主页</a></li><li class="chapter-item expanded "><a href="tutorial.html"><strong aria-hidden="true">1.</strong> 基本教程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tutorial-preparations.html"><strong aria-hidden="true">1.1.</strong> 准备工作</a></li><li class="chapter-item expanded "><a href="tutorial-startscripts.html"><strong aria-hidden="true">1.2.</strong> 编写写启动脚本</a></li><li class="chapter-item expanded "><a href="tutorial-manage.html"><strong aria-hidden="true">1.3.</strong> 使用管理端</a></li><li class="chapter-item expanded "><a href="tutorial-minihttpserver.html"><strong aria-hidden="true">1.4.</strong> 启动服务端</a></li><li class="chapter-item expanded "><a href="tutorial-client.html"><strong aria-hidden="true">1.5.</strong> 安装客户端</a></li><li class="chapter-item expanded "><a href="tutorial-notices.html"><strong aria-hidden="true">1.6.</strong> 注意的事项</a></li><li class="chapter-item expanded "><a href="tutorial-autostart.html"><strong aria-hidden="true">1.7.</strong> 一键启动</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tutorial-autostart-windows.html"><strong aria-hidden="true">1.7.1.</strong> Windows平台</a></li><li class="chapter-item expanded "><a href="tutorial-autostart-android.html"><strong aria-hidden="true">1.7.2.</strong> Android平台</a></li><li class="chapter-item expanded "><a href="tutorial-autostart-modclient.html"><strong aria-hidden="true">1.7.3.</strong> 模组方式启动</a></li></ol></li><li class="chapter-item expanded "><a href="tutorial-dynamicloader.html"><strong aria-hidden="true">1.8.</strong> 热升级</a></li></ol></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">2.</strong>  常见问题解答</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="faq-client.html"><strong aria-hidden="true">2.1.</strong> 客户端</a></li><li class="chapter-item expanded "><a href="faq-manage.html" class="active"><strong aria-hidden="true">2.2.</strong> 管理端</a></li></ol></li><li class="chapter-item expanded "><a href="advance.html"><strong aria-hidden="true">3.</strong> 高级教程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="advance-freedeploy.html"><strong aria-hidden="true">3.1.</strong> 自由化部署</a></li><li class="chapter-item expanded "><a href="advance-technicaldetails.html"><strong aria-hidden="true">3.2.</strong> 技术细节</a></li><li class="chapter-item expanded "><a href="advance-spellstart.html"><strong aria-hidden="true">3.3.</strong> 配置URL咒语启动</a></li><li class="chapter-item expanded "><a href="advance-modclientselfupdate.html"><strong aria-hidden="true">3.4.</strong> ModClient自更新</a></li><li class="chapter-item expanded "><a href="advance-combine.html"><strong aria-hidden="true">3.5.</strong> 合并更新包</a></li><li class="chapter-item expanded "><a href="advance-onekey-pack.html"><strong aria-hidden="true">3.6.</strong> 命令行直接打包</a></li><li class="chapter-item expanded "><a href="advance-ignores.html"><strong aria-hidden="true">3.7.</strong> 管理端ignores.txt</a></li><li class="chapter-item expanded "><a href="advance-overwrites.html"><strong aria-hidden="true">3.8.</strong> 管理端overwrites.txt</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">mcpatch docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/BalloonUpdate/McPatchDocs" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/BalloonUpdate/McPatchDocs/edit/master/pages/faq-manage.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="常见问题解答"><a class="header" href="#常见问题解答">常见问题解答</a></h2>
+<p>一些常见的问题都列举在这里了，希望对你有帮助。 </p>
+<h3 id="outofmemoryerror-java-heap-space"><a class="header" href="#outofmemoryerror-java-heap-space">OutOfMemoryError: Java heap space</a></h3>
+<p>创建新版本时，打包文件到一半出现这个问题</p>
+<p><code>影响范围</code>：管理端全版本</p>
+<p><code>问题原因</code>：给管理端分配的内存不够大</p>
+<p><code>解决方法</code>：参考下面的《内存不足，打包过程中断》问题</p>
+<h3 id="创建新版本时直接提示版本号为空"><a class="header" href="#创建新版本时直接提示版本号为空">创建新版本时直接提示版本号为空</a></h3>
+<p>创建新版本时， 没有任何输入就直接提示版本号为空</p>
+<p><code>影响范围</code>：管理端 1.1.0 至 1.1.2</p>
+<p><code>问题原因</code>：软件bug</p>
+<p><code>解决方法</code>：升级到管理端 1.1.3或者更高版本</p>
+<h3 id="暂时不支持打包大小超过2gb的文件"><a class="header" href="#暂时不支持打包大小超过2gb的文件">暂时不支持打包大小超过2GB的文件</a></h3>
+<p><code>影响范围</code>：管理端全版本</p>
+<p><code>问题原因</code>：受部分JavaAPI的限制，Int类型只能表示2GB大小以内的文件</p>
+<p><code>解决方法</code>：不要打包单个大小超过2GB的文件</p>
+<h3 id="内存不足打包过程中断"><a class="header" href="#内存不足打包过程中断">内存不足，打包过程中断</a></h3>
+<p><code>影响范围</code>：管理端全版本</p>
+<p><code>问题原因</code>：打包过程非常消耗内存，如果分配的内存过少，又要执意进行打包，可能会出现这个问题</p>
+<p><code>解决方法</code>：使用JVM参数<code>-Xmx4g</code>或者<code>-Xmx4096m</code>分配更多内存（同Minecraft服务端设置的方式）</p>
+<p>此问题多出现在打包大型文件时，一般认为超过100mb以上的单文件为大型文件，打包越大的文件时越应该有更大的内存</p>
+<p>注：出现此问题的概率 = 文件大小的平方（没错就是平方）</p>
+<h3 id="补丁文件超过了2gb大小的限制"><a class="header" href="#补丁文件超过了2gb大小的限制">补丁文件超过了2Gb大小的限制</a></h3>
+<p><code>影响范围</code>：管理端全版本</p>
+<p><code>问题原因</code>：一次性打包的内容太多，导致最终补丁文件超过你2Gb大小的限制，受部分JavaAPI的限制，Int类型只能表示2GB大小以内的文件</p>
+<p><code>解决方法</code>：将一次更新分开打包到多个更新包里</p>
+<h3 id="stream-is-not-in-the-bzip2-format"><a class="header" href="#stream-is-not-in-the-bzip2-format">Stream is not in the BZip2 format</a></h3>
+<p><code>影响范围</code>：管理端1.0.3和之前的版本</p>
+<p><code>问题原因</code>：代码bug导致</p>
+<p><code>解决方法</code>：升级到1.0.4或者更高版本</p>
+<h3 id="是否有类似gitignore的机制"><a class="header" href="#是否有类似gitignore的机制">是否有类似gitignore的机制</a></h3>
+<p>是否有类似gitignore机制来忽略对工作空间目录下某些文件的打包，这样就让管理端和客户端共用一份目录了</p>
+<p>没有这个机制，建议管理端和客户端的维护分开维护，不要共享，这会在很大程度上避免很多非常隐蔽的暗坑</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="faq-client.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="advance.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="faq-client.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="advance.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

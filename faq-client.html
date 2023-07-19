@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>客户端 - mcpatch docs</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/highlight.css">
+        <link rel="stylesheet" href="theme/line-height.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">项目主页</a></li><li class="chapter-item expanded "><a href="tutorial.html"><strong aria-hidden="true">1.</strong> 基本教程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tutorial-preparations.html"><strong aria-hidden="true">1.1.</strong> 准备工作</a></li><li class="chapter-item expanded "><a href="tutorial-startscripts.html"><strong aria-hidden="true">1.2.</strong> 编写写启动脚本</a></li><li class="chapter-item expanded "><a href="tutorial-manage.html"><strong aria-hidden="true">1.3.</strong> 使用管理端</a></li><li class="chapter-item expanded "><a href="tutorial-minihttpserver.html"><strong aria-hidden="true">1.4.</strong> 启动服务端</a></li><li class="chapter-item expanded "><a href="tutorial-client.html"><strong aria-hidden="true">1.5.</strong> 安装客户端</a></li><li class="chapter-item expanded "><a href="tutorial-notices.html"><strong aria-hidden="true">1.6.</strong> 注意的事项</a></li><li class="chapter-item expanded "><a href="tutorial-autostart.html"><strong aria-hidden="true">1.7.</strong> 一键启动</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tutorial-autostart-windows.html"><strong aria-hidden="true">1.7.1.</strong> Windows平台</a></li><li class="chapter-item expanded "><a href="tutorial-autostart-android.html"><strong aria-hidden="true">1.7.2.</strong> Android平台</a></li><li class="chapter-item expanded "><a href="tutorial-autostart-modclient.html"><strong aria-hidden="true">1.7.3.</strong> 模组方式启动</a></li></ol></li><li class="chapter-item expanded "><a href="tutorial-dynamicloader.html"><strong aria-hidden="true">1.8.</strong> 热升级</a></li></ol></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">2.</strong>  常见问题解答</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="faq-client.html" class="active"><strong aria-hidden="true">2.1.</strong> 客户端</a></li><li class="chapter-item expanded "><a href="faq-manage.html"><strong aria-hidden="true">2.2.</strong> 管理端</a></li></ol></li><li class="chapter-item expanded "><a href="advance.html"><strong aria-hidden="true">3.</strong> 高级教程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="advance-freedeploy.html"><strong aria-hidden="true">3.1.</strong> 自由化部署</a></li><li class="chapter-item expanded "><a href="advance-technicaldetails.html"><strong aria-hidden="true">3.2.</strong> 技术细节</a></li><li class="chapter-item expanded "><a href="advance-spellstart.html"><strong aria-hidden="true">3.3.</strong> 配置URL咒语启动</a></li><li class="chapter-item expanded "><a href="advance-modclientselfupdate.html"><strong aria-hidden="true">3.4.</strong> ModClient自更新</a></li><li class="chapter-item expanded "><a href="advance-combine.html"><strong aria-hidden="true">3.5.</strong> 合并更新包</a></li><li class="chapter-item expanded "><a href="advance-onekey-pack.html"><strong aria-hidden="true">3.6.</strong> 命令行直接打包</a></li><li class="chapter-item expanded "><a href="advance-ignores.html"><strong aria-hidden="true">3.7.</strong> 管理端ignores.txt</a></li><li class="chapter-item expanded "><a href="advance-overwrites.html"><strong aria-hidden="true">3.8.</strong> 管理端overwrites.txt</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">mcpatch docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/BalloonUpdate/McPatchDocs" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/BalloonUpdate/McPatchDocs/edit/master/pages/faq-client.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="常见问题解答"><a class="header" href="#常见问题解答">常见问题解答</a></h2>
+<p>一些常见的问题都列举在这里了，希望对你有帮助。 </p>
+<h3 id="更新时窗口无响应卡死或者内容丢失"><a class="header" href="#更新时窗口无响应卡死或者内容丢失">更新时窗口无响应卡死或者内容丢失</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：目前未知</p>
+<p><code>解决方法</code>：在配置文件里把主题禁用即可<code>disable-theme: true</code>或者升级到1.0.13或更高的版本</p>
+<p><code>其它建议</code>：如果你在用模组启动时遇到了这个问题，可能会同时遇到在配置文件里关不掉主题的情况，这时请考虑使用JavaAgent启动，因为适用于1.12.1游戏版本的BalloonUpdateModLoader会强制开启主题，然后就会导致未响应的问题出现</p>
+<h3 id="窗口内容是空白"><a class="header" href="#窗口内容是空白">窗口内容是空白</a></h3>
+<p>使用动态加载器后主题会加载失败，且窗口内容全部是空白</p>
+<p><code>影响范围</code>：客户端小于等于1.1.3，或者大于等于1.1.7，同时使用 Java 17或以上版本，同时使用了</p>
+<p><code>问题原因</code>：GUI的兼容性问题</p>
+<p><code>解决方法</code>：升级到客户端1.1.9或者以上版本，并用压缩软件打开客户端jar文件删除根目录的<code>.no-standalone-process</code>文件来切换到独立进程启动可以解决此问题（若遇到进程卡死无法退出的问题请手动创建这个文件回到非独立进程启动，并关闭主题功能）</p>
+<h3 id="javaagent启动时卡住游戏无法启动"><a class="header" href="#javaagent启动时卡住游戏无法启动">Javaagent启动时卡住游戏无法启动</a></h3>
+<p>在使用Javaagent启动时程序结束后游戏无法启动，一直卡在那，需要在任务管理器里手动关闭进程</p>
+<p><code>影响范围</code>：客户端1.0.13或更高版本</p>
+<p><code>问题原因</code>：客户端1.0.13开始更换了程序内部的启动方式，尝试以独立的进程启动以绕过限速和窗口未响应的问题</p>
+<p><code>解决方法</code>：换回老的启动方式（此方法需要1.0.15或者更高版本）：用压缩软件打开客户端jar文件，在根目录下创建一个名为<code>.no-standalone-process</code>的空文件（也就是在内置配置文件的旁边）然后保存关闭</p>
+<h3 id="error-opening-zip-file-or-jar-manifest-missing"><a class="header" href="#error-opening-zip-file-or-jar-manifest-missing">Error opening zip file or JAR Manifest missing</a></h3>
+<pre><code>Error occurred during initialization of VM
+agent library failed to init: instrument
+
+Error opening zip file or JAR Manifest missing: McPatchClient.jar
+</code></pre>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：一键启动参数设置有误，找不到McPatchClient.jar文件</p>
+<p><code>解决方法</code>：检查JVM参数是否设置正确，McPatchClient.jar是否放到了正确位置</p>
+<p>McPatchClient.jar需要放到<code>.minecraft/</code>目录下（如果未开启版本隔离），或者放到<code>.minecraft/versions/your-version/</code>目录下（如果开启了版本隔离）</p>
+<h3 id="下载限速问题"><a class="header" href="#下载限速问题">下载限速问题</a></h3>
+<p>有小概率会遇到下载速度会变得非常慢（约几百kb/s），远低于浏览器直接下载的速度</p>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：问题源头目前未知，貌似和操作系统，启动器，Java发行版，黄历忌宜，游戏版本都有关系</p>
+<p><code>解决方法</code>：此问题目前无法彻底解决，但可以尝试一下方法</p>
+<ol>
+<li>升级客户端到1.0.13或者更高版本</li>
+<li>把minihttpserver更换成nginx，apache等专业服务器软件</li>
+<li>更换Java发行版，如openjdk，zulu等</li>
+</ol>
+<h3 id="连接被拒绝"><a class="header" href="#连接被拒绝">连接被拒绝</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：由于网络原因，服务器拒绝了客户端的HTTP TCP请求。俗话叫端口不通</p>
+<p><code>解决方法</code>：这不是程序bug，请排查与服务器直接的网络是否通畅，是否需要放开安全组规则，配置端口映射，放行服务器防火墙规则，也请检查客户端配置文件中的地址是否填写错误等</p>
+<p>如果你的服务端部署在公网，请检查客户端报错提示框中的地址是否含有localhost或者127.0.0.1等字样，如果有，将其修改成你的公网IP地址再重试</p>
+<h3 id="连接超时"><a class="header" href="#连接超时">连接超时</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：由于网络原因，服务器未能在指定时间内及时应答客户端的HTTP TCP数据包。可能是网络不稳定也可能端口不通</p>
+<p><code>解决方法</code>：这不是程序bug，请检查客户端与服务器之间的网络是否稳定，防火墙是否放行</p>
+<p>如果你的服务端部署在公网，请检查客户端报错提示框中的地址是否含有localhost或者127.0.0.1等字样，如果有，将其修改成你的公网IP地址再重试</p>
+<h3 id="连接中断"><a class="header" href="#连接中断">连接中断</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：由于网络原因，已建立的HTTP TCP连接被意外断开。俗话叫网络不稳定</p>
+<p><code>解决方法</code>：这不是程序bug，请检查客户端与服务器之间的网络是否流畅</p>
+<h3 id="http状态码不在2xx-3xx之间"><a class="header" href="#http状态码不在2xx-3xx之间">HTTP状态码不在2xx-3xx之间</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：访问对应URL时，服务端返回了一个表示错误的HTTP状态码（即不在2xx-3xx之间）</p>
+<p><code>解决方法</code>：如果是HTTP(s)源，用浏览器打开这个出错的URL，根据浏览器的错误信息自行解决。如果是Webdav源，请向贡献者报告此问题</p>
+<h3 id="http状态码404不在2xx-3xx之间versionstxt"><a class="header" href="#http状态码404不在2xx-3xx之间versionstxt">HTTP状态码(404)不在2xx-3xx之间(versions.txt)</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：服务端public目录下找不到versions.txt文件。多出现在忘记使用管理端创建过更新包的情况</p>
+<p><code>解决方法</code>：打开管理端，创建任意一个版本或者更新包。另外，如果你刚升级到客户端1.1版本就碰到这个问题，说明你的管理端没有同步更新到1.1版本，因为1.1版本的客户端和管理端和1.0版本是完全不兼容的，需要重新创建所有的更新包（因为格式不兼容）</p>
+<h3 id="拒绝访问"><a class="header" href="#拒绝访问">拒绝访问</a></h3>
+<p>错误详情：java.io.FileNotFoundException。且路径所指向的文件是mc-patch-version.txt或者mc-patch.log</p>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：你把对应的文件属性设置成了隐藏，而隐藏文件是没有写入权限的，所以会报错</p>
+<p><code>解决方法</code>：取消勾选文件的隐藏属性。如果不想让玩家乱点，可以单独创建一个很深的文件夹来存放McPatchClient本体和配置文件</p>
+<h3 id="webdav连接失败"><a class="header" href="#webdav连接失败">Webdav连接失败</a></h3>
+<p><code>影响范围</code>：客户端1.0.9版或以上</p>
+<p><code>问题原因</code>：由于网络原因，Webdav服务器源出现了网络连接层面的错误</p>
+<p><code>解决方法</code>：这不是程序bug，此时需要根据报错信息后面的状态详情来定位具体原因</p>
+<h3 id="stream-is-not-in-the-bzip2-format"><a class="header" href="#stream-is-not-in-the-bzip2-format">Stream is not in the BZip2 format</a></h3>
+<p><code>影响范围</code>：客户端1.0.13和之前的版本</p>
+<p><code>问题原因</code>：代码bug导致</p>
+<p><code>解决方法</code>：升级客户端到1.0.14或者更高版本</p>
+<h3 id="客户端版本号重启时删掉了所有的文件"><a class="header" href="#客户端版本号重启时删掉了所有的文件">客户端版本号重启时删掉了所有的文件</a></h3>
+<p>当客户端版本号出现问题而重头下载所有版本时，删掉了所有游戏的文件和目录</p>
+<p><code>影响范围</code>：管理端 1.1.0 至 1.1.5（没错这个是管理端问题而非客户端）</p>
+<p><code>问题原因</code>：代码bug导致</p>
+<p><code>解决方法</code>：升级到管理端 1.1.5 或者更高版本，然后重头打包所有更新包（尤其是第一个更新包）</p>
+<h3 id="与图书馆模组librarianlib的兼容性问题"><a class="header" href="#与图书馆模组librarianlib的兼容性问题">与图书馆模组librarianlib的兼容性问题</a></h3>
+<p>客户端程序使用Kotlin编写，并打包了Kotlin标准库。和图书馆模组同时加载时，可能会出现问题</p>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：截止撰写本条目时，因为图书馆使用了较旧的Kotlin标准库版本（1.3），本程序使用（1.7）版本，直接可能会出现冲突</p>
+<p><code>解决方法</code>：此问题无法解决，只能等待图书馆模组将自带的Kotlin标准库升级到较新的版本来解决</p>
+<p>题外话：截止撰写本条目时，图书馆模组的GitHub Issue里也有不少人反馈这个问题，但似乎这个模组很久未更新了</p>
+<h3 id="mcpatchclient是否可以自己更新自己"><a class="header" href="#mcpatchclient是否可以自己更新自己">McPatchClient是否可以自己更新自己</a></h3>
+<p><code>问题描述</code>：McPatchClient是否可以通过把自身文件加入到更新中来实现自己更新自己？</p>
+<p><code>问题解答</code>：不可以，对运行中的文件进行写入操作会导致未知行为（UB），这是非常危险的。程序已在代码里完全写死以阻止这种危险操作</p>
+<p><code>小小提示</code>：虽然不可以更新客户端程序本身，但是更新配置文件是允许的，但缺点是第二次启动时新的配置文件才会生效</p>
+<h3 id="pcl的修改窗口标题改错了窗口"><a class="header" href="#pcl的修改窗口标题改错了窗口">PCL的修改窗口标题改错了窗口</a></h3>
+<p><code>问题描述</code>：PCL的修改窗口标题修改了McPatchClient的窗口标题，而没有修改Minecraft窗口标题</p>
+<p><code>问题原因</code>：PCL的检测机制会把第一个出现的窗口当做游戏窗口，当McPatchClient加入之后，会挤占这个窗口位置，导致窗口重命名到了McPatchClient上</p>
+<p><code>解决方法</code>：此问题无解</p>
+<h3 id="另一个程序已锁定文件的一部分进程无法访问"><a class="header" href="#另一个程序已锁定文件的一部分进程无法访问">另一个程序已锁定文件的一部分，进程无法访问</a></h3>
+<p>java.io.IOException：另一个程序已锁定文件的一部分，进程无法访问</p>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：Windows不允许对一个正在运行中的文件进行读写操作</p>
+<p><code>解决方法</code>：如果你使用JavaAgent启动，请不要更新游戏核心文件，游戏资源文件等可能与McPatchClient同时处于运行中的文件。如果你未使用JavaAgent启动，请检查Minecraft进程是否退出再更新</p>
+<h3 id="配置文件中的选项xxx无效"><a class="header" href="#配置文件中的选项xxx无效">配置文件中的选项(xxx)无效</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：配置文件中找不到名为xxx的配置项，或者配置项的数据类型不正确</p>
+<p><code>解决方法</code>：删除配置文件并重新从文件内部解压重新配置一次</p>
+<h3 id="配置文件无法解码为yaml格式"><a class="header" href="#配置文件无法解码为yaml格式">配置文件无法解码为yaml格式</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：配置文件语法错误导致无法解码</p>
+<p><code>解决方法</code>：检查配置文件格式是否正确，注释，缩进，忘打逗号等都会引发这个错误。如果仍然遇到这个错误，请先备份现有的配置文件，然后重新从Jar文件里解压官方示例配置文件，并一步步修改，直到定位到错误位置为止（也叫排除法）</p>
+<h3 id="mc-patchjson无法解码为版本meta文件格式"><a class="header" href="#mc-patchjson无法解码为版本meta文件格式">mc-patch.json无法解码为版本Meta文件格式</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：更新包的元数据文件<code>.mc-patch.json</code>格式不正确，无法解码。此问题多出现在SakuraFrp穿透场景中</p>
+<p><code>解决方法</code>：如果你使用了SakuraFrp，且报错信息中包含<code>&lt;!DOCTYPE html&gt;</code>加跟着一长串乱码的话，请检查你的SakuraFrp穿透是否出了问题。如果你没有使用SakuraFrp，请报告此问题。</p>
+<h3 id="找不到minecraft目录"><a class="header" href="#找不到minecraft目录">找不到.minecraft目录</a></h3>
+<p>即使把Jar客户端放到<code>.minecraft</code>目录旁也提示找不到的问题</p>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：启动Jar文件时，在<code>打开方式</code>中选择了以Java启动打开，而非默认Java启动</p>
+<p><code>解决方案</code>：将Jar文件设置为默认使用Java运行，然后使用双击方式启动</p>
+<h3 id="无法确定版本前后关系"><a class="header" href="#无法确定版本前后关系">无法确定版本前后关系</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：客户端的版本号在服务端的mc-patch-versions.txt文件里找不到，可能是删掉了某个版本更新包导致</p>
+<p><code>解决方法</code>：</p>
+<ol>
+<li>让玩家删掉并重新下载一份群文件里的客户端压缩包（十分推荐，省时省力）</li>
+<li>删除客户端的<code>mc-patch-client-version.txt</code>文件使其重新下载所有的版本更新包（谨慎操作，此行为非常消耗流量）</li>
+<li>修改客户端的<code>mc-patch-client-version.txt</code>文件，输入一个服务端存在的有效版本号（谨慎操作，可能会导致对某些文件的后续更新直接失效）</li>
+</ol>
+<h3 id="版本的补丁文件的xxx已损坏"><a class="header" href="#版本的补丁文件的xxx已损坏">版本的补丁文件的(xxx)已损坏</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：更新包文件(.bin)里的某个文件二进制数据无法通过哈希校验，可能是文件下载时收到了损坏</p>
+<p><code>解决方法</code>：多次重试更新过程</p>
+<h3 id="主机指纹不可信任"><a class="header" href="#主机指纹不可信任">主机指纹不可信任</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：SFTP源的服务器字符串中指定的指纹和远程主机报告的指纹不一致，可能出现中间人攻击</p>
+<p><code>解决方法</code>：请自行确认远程主机是否可信，如果可信，请更新SFTP源的服务器字符串中的指纹部分</p>
+<h3 id="无效的sftp服务器字符串"><a class="header" href="#无效的sftp服务器字符串">无效的sftp服务器字符串</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：SFTP源的服务器字符串的格式不正确</p>
+<p><code>解决方法</code>：请仔细阅读配置文件注释和文档，修改服务器字符串的格式。如果仍然遇到这个错误，请先备份现有的配置文件，然后重新从Jar文件里解压官方示例配置文件，并一步步修改，直到定位到错误位置为止（也叫排除法）</p>
+<h3 id="无效的webdav服务器字符串"><a class="header" href="#无效的webdav服务器字符串">无效的webdav服务器字符串</a></h3>
+<p><code>影响范围</code>：客户端1.0.9版或以上</p>
+<p><code>问题原因</code>：Webdav源的服务器字符串的格式不正确</p>
+<p><code>解决方法</code>：请仔细阅读配置文件注释和文档，修改服务器字符串的格式</p>
+<h3 id="sftp-身份验证失败"><a class="header" href="#sftp-身份验证失败">SFTP 身份验证失败</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：SFTP源的服务器字符串中的用户名或者密码不正确，无法登录SSH</p>
+<p><code>解决方法</code>：将服务器字符串中的用户名和密码修改正确</p>
+<h3 id="sftp-client-打开失败"><a class="header" href="#sftp-client-打开失败">SFTP Client 打开失败</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：SSH已经登录成功，但是无法开启SFTP通信，可能是服务端SSH不支持SFTP协议</p>
+<p><code>解决方法</code>：更换SSH服务端软件</p>
+<h3 id="sftp-下载文件失败"><a class="header" href="#sftp-下载文件失败">SFTP 下载文件失败</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：通过SFTP下载文件时遇到错误</p>
+<p><code>解决方法</code>：可能是网络原因导致。具体问题原因请看程序报告的错误信息内容</p>
+<h3 id="服务器ssl证书无法验证"><a class="header" href="#服务器ssl证书无法验证">服务器SSL证书无法验证</a></h3>
+<p><code>影响范围</code>：客户端1.0.9版或以上</p>
+<p><code>问题原因</code>：Webdav源的服务器SSL证书无法通过验证，可能是证书已过期，也可能网络被劫持</p>
+<p><code>解决方法</code>：更新服务器证书，并且用浏览器打开未显示证书错误后重新使用McPatchClient重试</p>
+<p>为安全起见，McPatch无法跳过Webdav源的SSL证书验证过程，也就是说几乎是不支持自签证书的</p>
+<h3 id="找不到任何更新服务器地址"><a class="header" href="#找不到任何更新服务器地址">找不到任何更新服务器地址</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：客户端配置文件中的server选项不要写一个空列表，这样无法更新任何文件</p>
+<p><code>解决方法</code>：客户端配置文件中的server选项不要留空</p>
+<h3 id="未知格式的服务器字符串"><a class="header" href="#未知格式的服务器字符串">未知格式的服务器字符串</a></h3>
+<p><code>影响范围</code>：客户端全版本</p>
+<p><code>问题原因</code>：客户端配置文件中的server选项中的某一项因为格式不正确而无法解析</p>
+<p><code>解决方法</code>：仔细阅读示例格式，并对照检查错误。如果仍然遇到这个错误，请先备份现有的配置文件，然后重新从Jar文件里解压官方示例配置文件，并一步步修改，直到定位到错误位置为止（也叫排除法）</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="faq.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="faq-manage.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="faq.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="faq-manage.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
